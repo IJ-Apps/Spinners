@@ -18,43 +18,25 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    //TUTORIAL: https://youtu.be/NJ6tywOAPDk
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Elements to display
         final List<String> states = Arrays.asList("TX", "CA", "WA", "NY", "NJ");
-
+        // Our spinner object
         final Spinner spinner = findViewById(R.id.spinner);
 
+        //An ArrayAdapter that creates a View for every element in our drop-down
+        //  We are using custom layouts: https://youtu.be/N8GfosWTt44
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), R.layout.my_selected_item, states);
         adapter.setDropDownViewResource(R.layout.my_dropdown_item);
 
         spinner.setAdapter(adapter);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // Make a Toast whenever the user selects something from the Spinner
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -64,34 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     /*   Button getText = findViewById(R.id.getText);
+        // Button that displays currently selected item when clicked
+        Button getText = findViewById(R.id.getText);
         getText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String state = spinner.getSelectedItem().toString();
                 Toast.makeText(getApplicationContext(), state, Toast.LENGTH_SHORT).show();
             }
-        });*/
-
-
+        });
     }
 }
