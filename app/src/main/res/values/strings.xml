@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Spinners</string>
+    <string-array name="states">
+        <item>TX</item>
+        <item>NY</item>
+        <item>NJ</item>
+        <item>WA</item>
+        <item>CA</item>
+    </string-array>
+</resources>
