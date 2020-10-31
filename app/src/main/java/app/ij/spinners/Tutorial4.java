@@ -17,21 +17,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class Tutorial4 extends AppCompatActivity {
     //TUTORIAL 1: https://youtu.be/NJ6tywOAPDk
     //Playlist of tutorials on Spinners: https://www.youtube.com/playlist?list=PLLmkb5CTw5rTQ4bjWZdOQbrHPsZexcdef
-    //TUTORIAL 5: https://youtu.be/hdB9XOJu8rY
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Elements to display
         final List<String> states = Arrays.asList("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY");
+        // Our spinner object
         final Spinner spinner = findViewById(R.id.spinner);
 
-        // Our custom Adapter class that we created
-        SpinnerAdapter adapter = new SpinnerAdapter(getApplicationContext(), states);
+        //An ArrayAdapter that creates a View for every element in our drop-down
+        //  We are using custom layouts: https://youtu.be/N8GfosWTt44
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), R.layout.my_selected_item, states);
         adapter.setDropDownViewResource(R.layout.my_dropdown_item);
 
         spinner.setAdapter(adapter);
@@ -43,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 String newItem = states.get(i);
                 Toast.makeText(getApplicationContext(), "You selected: " + newItem, Toast.LENGTH_LONG).show();
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         });
 
 

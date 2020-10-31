@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="24dp"
-    android:textColor="#000"
-    android:background="#ffd5d5"
-    android:padding="13dp"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-</TextView>
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginLeft="15sp"
+        android:id="@+id/img"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/img"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginTop="35sp"
+        android:layout_height="wrap_content"></TextView>
+
+</RelativeLayout>
